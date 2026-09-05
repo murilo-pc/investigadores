@@ -30,6 +30,7 @@ body{
   border: none;
   margin: 2px;
   min-width: 100px;
+  transition: transform 0.5s;
 }
 
 
@@ -39,4 +40,35 @@ body{
   text-align: center;
   min-height: 200px;
   
+}
+#a1:active, #a2:active, #a3:active{
+  transform: scale(1.2);
+}
+
+.fadeup{
+  animation: fadeup 0.5s;
+}
+.glowup{
+  animation: glowup 0.5s;
+}
+
+@keyframes fadeup{
+  0%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+@keyframes glowup{
+  0%{
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

@@ -1,6 +1,11 @@
 // DATASET
 let current = 0;
 let points = 0;
+const quizConteiner = document.querySelector(".quiz");
+quizConteiner.addEventListener("animationend", () => {
+  quizConteiner.classList.remove("fadeup")
+  quizConteiner.classList.add("glowup");
+})
 const questions = [
     {
         question: "Do you think it's a good idea for hospitals to have medical robots?",
@@ -65,6 +70,7 @@ const questions = [
 ]; 
 
 function update_question(answer){
+  document.querySelector(".quiz").classList.add("fadeup")
   if(current == 9){
     console.log(points)
     let status
