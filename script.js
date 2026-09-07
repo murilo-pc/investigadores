@@ -4,7 +4,6 @@ const quizConteiner = document.querySelector(".quiz");
 
 quizConteiner.addEventListener("animationend", () => {
     if(quizConteiner.classList.contains("fadeup")){
-        
         quizConteiner.classList.remove("fadeup")
         quizConteiner.classList.add("glowup") 
     }else{
@@ -13,9 +12,10 @@ quizConteiner.addEventListener("animationend", () => {
 
 }) 
 
-function update_question(answer){
+function update_question(answer){ // o argumento answer é a quantidade de pontos adicionada
+  console.log("answer: "+answer)
   document.querySelector(".quiz").classList.add("fadeup")
-  if(current == 9){
+  if(current == 10){
     console.log(points)
     let status
     if(points < 12){
@@ -35,21 +35,11 @@ function update_question(answer){
     document.getElementById("a1").textContent = questions[current].a1;
     document.getElementById("a2").textContent = questions[current].a2;
     document.getElementById("a3").textContent = questions[current].a3;
-    switch(answer){
-        case 1:
-            points += 3;
-            break;
-        case 2:
-            points += 1;
-            break;
-        case 3:
-            points += 2;
-            break;
-    }
+    points += answer
     current++;
   } 
 }
 
 
-update_question();
+update_question(0);
 

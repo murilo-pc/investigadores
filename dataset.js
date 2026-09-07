@@ -31,21 +31,21 @@ const questions = [
     },
     {
         question: "Would you prefer caring and respectful service or an automated, direct approach at a hospital?",
-        a1: "Both",
-        a2: "Respectful and affectionate",
-        a3: "Direct and automated"
+        a1: "Direct and automated",
+        a2: "Respectful and affectionate", 
+        a3: "Both"
     },
     {
         question: "Which do you think ensures greater stability when delivering a diagnosis: a medical robot or a doctor?",
-        a1: "Both",
+        a1: "Medical robot",
         a2: "Doctor",
-        a3: "Medical robot"
+        a3: "Both"
     },
     {
         question: "Who do you think will make more mistakes: a programmed medical robot or a medical specialist?",
-        a1: "Both",
-        a2: "Medical robot",
-        a3: "Medical specialist"
+        a3: "Both",
+        a1: "Medical robot",
+        a2: "Medical specialist"
     },
     {
         question: "Do you think medical robots offer more benefits than drawbacks?",
