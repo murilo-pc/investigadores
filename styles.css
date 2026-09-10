@@ -21,7 +21,7 @@ body{
   min-height: 200px;
 }
 
-#a1, #a2, #a3{
+#a1, #a2, #a3, #start{
   border-radius: 10px;
   border: none;
   margin: 2px;
@@ -30,13 +30,13 @@ body{
 }
 
 @media (hover: hover) and (pointer: fine){
-  #a1:hover, #a2:hover, #a3:hover{
+  #a1:hover, #a2:hover, #a3:hover, #start:hover{
     transform: scaleX(1.2);
     background-color: gray;
   }
 }
 @media (hover: none){
-  #a1:active, #a2:active, #a3:active{
+  #a1:active, #a2:active, #a3:active, #start:active{
     transform: scale(1.2);
   }
 }
@@ -54,6 +54,9 @@ body{
 }
 .glowup{
   animation: glowup 0.5s;
+}
+.inactive{
+  display: none;
 }
 
 @keyframes fadeup{

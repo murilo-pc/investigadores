@@ -4,11 +4,14 @@ const question = document.getElementById("question");
 const a1 = document.getElementById("a1");
 const a2 = document.getElementById("a2");
 const a3 = document.getElementById("a3");
+const start = document.getElementById("start");
 
 // Event Listeners
 a1.addEventListener("click", () => update_question(3));
 a2.addEventListener("click", () => update_question(1));
 a3.addEventListener("click", () => update_question(2));
+start.addEventListener("click", () => update_question(0));
+
 quizConteiner.addEventListener("animationend", toggleAnimation)
 
 // Contadores
@@ -29,6 +32,12 @@ function update_question(answer){ // o argumento answer é a quantidade de ponto
   console.log("answer: "+answer)
   document.querySelector(".quiz").classList.add("fadeup")
   points += answer;
+  if(answer == 0){
+    start.classList.add("inactive");
+    a1.classList.remove("inactive");
+    a2.classList.remove("inactive");
+    a3.classList.remove("inactive");
+  }
   if(current == 10){
     console.log(points)
     let status
@@ -53,4 +62,6 @@ function update_question(answer){ // o argumento answer é a quantidade de ponto
   } 
 }
 
-update_question(0);
+a1.classList.add("inactive");
+a2.classList.add("inactive");
+a3.classList.add("inactive");
