@@ -20,10 +20,6 @@ body{
   min-width: 200px;
   min-height: 200px;
 }
-#submit{
-  margin: 10px 0px;
-  
-}
 
 #a1, #a2, #a3{
   border-radius: 10px;
@@ -33,9 +29,16 @@ body{
   transition: transform 0.2s;
 }
 
-#a1:hover, #a2:hover, #a3:hover{
-  transform: scaleX(1.2);
-  background-color: gray;
+@media (hover: hover) and (pointer: fine){
+  #a1:hover, #a2:hover, #a3:hover{
+    transform: scaleX(1.2);
+    background-color: gray;
+  }
+}
+@media (hover: none){
+  #a1:active, #a2:active, #a3:active{
+    transform: scale(1.2);
+  }
 }
 
 #question{
@@ -44,9 +47,6 @@ body{
   text-align: center;
   min-height: 200px;
   
-}
-#a1:active, #a2:active, #a3:active{
-  transform: scale(1.2);
 }
 
 .fadeup{
