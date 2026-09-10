@@ -1,48 +1,64 @@
+@font-face {
+  font-family: "BodoniFLF-BoldItalic";
+  src: url("fonts/BodoniFLF-BoldItalic.ttf");
+}
+
+strong{
+  color: rgb(170, 255, 0);
+  font-style: italic;
+}
 body{
-  font-family: Libre Bodoni;
+  font-family: "arial";
   font-size: 20px;
   padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: linear-gradient(white,#dcf6b3);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .title {
-  font-style: italic;
+  font-family: "BodoniFLF-BoldItalic";
 	color: #598556;
+  text-align: center;
 }
 .quiz{
   background-color: #598556;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 200px;
+  min-width: 300px;
   min-height: 200px;
 }
 
 #a1, #a2, #a3, #start{
   border-radius: 10px;
   border: none;
-  margin: 2px;
-  min-width: 100px;
-  transition: transform 0.2s;
+  margin: 6px;
+  min-width: 200px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  min-height: 15px;
+  padding: 4px 0px;
 }
 
 @media (hover: hover) and (pointer: fine){
   #a1:hover, #a2:hover, #a3:hover, #start:hover{
-    transform: scaleX(1.2);
-    background-color: gray;
+    transform: scale(1.2);
+    background-color: lightgreen;
   }
 }
 @media (hover: none){
   #a1:active, #a2:active, #a3:active, #start:active{
     transform: scale(1.2);
+    background-color: lightgreen;
   }
 }
 
 #question{
-  max-width: 200px;
+  max-width: 250px;
   color: white;
   text-align: center;
   min-height: 200px;
@@ -50,10 +66,10 @@ body{
 }
 
 .fadeup{
-  animation: fadeup 0.5s;
+  animation: fadeup 0.4s;
 }
 .glowup{
-  animation: glowup 0.5s;
+  animation: glowup 0.4s;
 }
 .inactive{
   display: none;
