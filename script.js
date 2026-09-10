@@ -15,6 +15,7 @@ quizConteiner.addEventListener("animationend", () => {
 function update_question(answer){ // o argumento answer é a quantidade de pontos adicionada
   console.log("answer: "+answer)
   document.querySelector(".quiz").classList.add("fadeup")
+  points += answer;
   if(current == 10){
     console.log(points)
     let status
@@ -35,7 +36,6 @@ function update_question(answer){ // o argumento answer é a quantidade de ponto
     document.getElementById("a1").textContent = questions[current].a1;
     document.getElementById("a2").textContent = questions[current].a2;
     document.getElementById("a3").textContent = questions[current].a3;
-    points += answer
     current++;
   } 
 }
