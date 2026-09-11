@@ -28,9 +28,18 @@ function toggleAnimation(){
   }
 }
 
-function update_question(answer){ // o argumento answer é a quantidade de pontos adicionada
-  console.log("answer: "+answer)
-  document.querySelector(".quiz").classList.add("fadeup")
+function wait_animation(){
+  return new Promise((resolve) =>{
+    quizConteiner.addEventListener("animationend", () =>{
+      resolve();
+    }, {once: true});
+  });
+}
+
+async function update_question(answer){ // o argumento answer é a quantidade de pontos adicionada
+  console.log("answer: " + answer);
+  quizConteiner.classList.add("fadeup");
+  await wait_animation();
   points += answer;
   if(answer == 0){
     start.classList.add("inactive");
@@ -48,12 +57,14 @@ function update_question(answer){ // o argumento answer é a quantidade de ponto
     }else{
       status = "<strong>Pragmatics</strong>: You prefer something objective and straightforward, choosing either a physical doctor or a medical robot, as long as it's the most practical option."
     }
+    quizConteiner.classList.add("glowup");
     question.innerHTML = "your pontutation is " + points + ", that means you are:<br>" + status
     a1.remove();
     a2.remove();
     a3.remove();
 
   }else{
+    quizConteiner.classList.add("glowup");
     question.textContent = questions[current].question;
     a1.textContent = questions[current].a1;
     a2.textContent = questions[current].a2;
